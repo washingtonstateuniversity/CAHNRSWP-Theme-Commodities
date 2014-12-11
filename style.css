@@ -1,0 +1,408 @@
+/**
+ * Theme Name:  WSU Spine - CAHNRS Commodities
+ * Theme URI:   http://cahnrs.wsu.edu/communications/
+ * Author:      CAHNRS Communications, Danial Bleile
+ * Author URI:  http://cahnrs.wsu.edu/communications/
+ * Description: 
+ * Version:     0.0.1
+ * License:     Copyright Washington State University
+ * License      URI: http://copyright.wsu.edu
+ * Template:    WSUWP-spine-parent-theme
+ */
+ 
+body.home {
+	background-image: url('http://treefruitdev.topics.wpdev.cahnrs.wsu.edu/wp-content/themes/wsu-treefruit/images/backgrounds/tree-tunnel.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% auto;
+}
+ 
+#binder {
+	position: relative;
+}
+
+body main > section { 
+	position: static;
+}
+
+body.home main > section .column.one,
+body.home main > section .column.one:before,
+body.home main > section .column.one:after {
+	background-color: #fff;
+}
+ 
+/**
+ * Start Global Header 
+ *
+ */
+body.home main > section .column.one:before,
+body.home main > section .column.one:after,
+#cahnrs-treefruit-footer:before,
+#cahnrs-treefruit-footer:after,
+#cahnrs-global-header #site-nav-horizontal:before,
+#cahnrs-global-header #site-nav-horizontal:after,
+#cahnrs-global-header:before,
+#cahnrs-global-header:after,
+#cahnrs-global-header #site-nav-horizontal:before,
+#cahnrs-global-header #site-nav-horizontal:after {
+	content: " ";
+	width: 100%;
+	right: -100%;
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+body.home main > section .column.one:before,
+#cahnrs-treefruit-footer:before,
+#cahnrs-global-header #site-nav-horizontal:before,
+#cahnrs-global-header:before {
+	right: auto;
+	left: -100%;
+}
+ 
+#cahnrs-global-header {
+	background: #981e33;
+	position: relative;
+	z-index: 300;
+}
+
+#cahnrs-global-header:before,
+#cahnrs-global-header:after {
+	background: #981e33;
+}
+
+#cahnrs-global-header .site-title {
+	display: inline-block;
+	height: 110px;
+	line-height: 110px;
+	color: #fff;
+	font-size: 2rem;
+	padding: 0 2rem;
+}
+
+#cahnrs-global-header #site-search {
+	float: right;
+	background: #fff;
+	padding: 0;
+	border-radius: 3px;
+	margin-top: 35px;
+}
+
+#cahnrs-global-header #site-search input {
+	background: none;
+	height: 40px;
+	border: none;
+	outline: none;
+}
+
+#cahnrs-global-header #site-search input#site-search-field {
+	width: 200px;
+	padding-left: 1rem;
+	padding-right: 30px;
+	line-height: 40px;
+	font-size: 1.2rem;
+	color: #981e32;
+}
+
+#cahnrs-global-header #site-search input#site-search-submit {
+	width: 50px;
+	padding-left: 1rem;
+	padding-right: 30px;
+	height: 40px;
+	font-size: 1.2rem;
+	background-position: center center;
+}
+
+#cahnrs-global-header #site-nav-horizontal {
+	position: relative;
+	background: #7b1626;
+	color: #d09607;
+	padding: 0.3rem 2rem;
+}
+
+#cahnrs-global-header #site-nav-horizontal:before,
+#cahnrs-global-header #site-nav-horizontal:after {
+	background: #7b1626;
+	z-index: 350;
+}
+
+#cahnrs-global-header #site-nav-horizontal > ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+#cahnrs-global-header #site-nav-horizontal ul li,
+#cahnrs-global-header #site-nav-horizontal > ul ul {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+#cahnrs-global-header #site-nav-horizontal > ul li.current,
+#cahnrs-global-header #site-nav-horizontal > ul li.current ul {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#cahnrs-global-header #site-nav-horizontal > ul > li.current:first-child {
+	display: none;
+}
+
+
+#cahnrs-global-header #site-nav-horizontal.bread-crumbs a {
+	display: inline-block;
+	color: #d09607;
+	padding: 0 0.5rem;
+	vertical-align: top;
+}
+/**
+ * Start Home Section 
+ *
+ */
+#site-home-section {
+	position: relative;
+	margin-top: -140px;
+	margin-right: 200px;
+	height: 100vh;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+#site-home-section .site-home-column {
+	max-width: 500px;
+	margin: 0 auto;
+	background: rgba( 0 , 0 , 0 , 0.7 );
+	position: relative;
+	height: 100%;
+	padding-top: 170px;
+}
+
+#site-home-section h1 {
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 4rem;
+}
+
+#site-home-section h2 {
+	border-top: 2px solid #eab021;
+	color: #eab021;
+	text-align: center;
+	font-size: 1.4rem;
+	margin: 0 2rem;
+}
+/**
+ * Start Tree Fruit Footer
+ *
+ */
+#cahnrs-treefruit-footer {
+	height: 100px;
+	margin-top: -100px;
+	position: relative;
+}
+
+#cahnrs-treefruit-footer,
+#cahnrs-treefruit-footer:before,
+#cahnrs-treefruit-footer:after {
+	background-color: #fff;
+}
+
+#cahnrs-treefruit-footer .fruit-nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 200px;
+}
+#cahnrs-treefruit-footer .fruit-nav a {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 25%;
+	position: relative;
+}
+
+#cahnrs-treefruit-footer .fruit-nav a .icon {
+	display: block;
+	width: 60%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#cahnrs-treefruit-footer .title {
+	position: absolute;
+	bottom: 15px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #900327;
+	font-weight: bold;
+}
+/**
+ * Start Main Content
+*/
+main .row.side-right .column.one {
+	width: auto;
+	margin: 0 200px 0 2rem;
+	padding: 2rem 0 4rem;
+}
+
+main .row.side-right .column.two {
+	width: 200px;
+	position: absolute;
+	height: 100%;
+	background: rgba( 74 , 84 , 89 , 0.8 ) ;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 150;
+}
+
+/**
+ * Base 64 encoded UI icons
+*/
+#cahnrs-global-header #site-search input#site-search-submit {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0VGMDQ4RTAzQTg1MTFFNEEyRTJBQjgxMjA4NkQ3RDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0VGMDQ4RTEzQTg1MTFFNEEyRTJBQjgxMjA4NkQ3RDEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRUYwNDhERTNBODUxMUU0QTJFMkFCODEyMDg2RDdEMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRUYwNDhERjNBODUxMUU0QTJFMkFCODEyMDg2RDdEMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtMqVesAAAcOSURBVHja5FdrcFRn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)
+}
+#cahnrs-global-header #site-nav-horizontal:before,
+#cahnrs-global-header #site-nav-horizontal:after,
+#cahnrs-global-header #site-nav-horizontal {
+background-repeat: repeat-x;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAYAAAB8ZH1oAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTIwQUExREM3RkE1MTFFNDlEQzVCMjZCNjk1MDUyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTIwQUExREQ3RkE1MTFFNDlEQzVCMjZCNjk1MDUyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFMjBBQTFEQTdGQTUxMUU0OURDNUIyNkI2OTUwNTJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFMjBBQTFEQjdGQTUxMUU0OURDNUIyNkI2OTUwNTJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpmSaXQAAABJSURBVHjaYmRkYHBgABIY4D8QM0JpIGABcr6hSDJAFTAisf+DFDIwfILrZkQzEQmwAAU+YLWaEdV6RkZGBi4MtzGgmQ4EAAEGAKBBDTZbmTYNAAAAAElFTkSuQmCC)
+}
+
+
+
+/**
+ * Start Video Gallery Demo
+ *
+ */
+.cahnrs-image-spacer {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.video-demo-video {
+	display: inline-block;
+	width: 31.33%;
+	margin: 0 1%;
+	background: #777;
+	color: #ccc;
+	position: relative;
+}
+
+.video-demo-video span {
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 80%;
+	left: 10%;
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+.site-home-widgets {
+	margin: 0 2rem;
+	padding-top: 1rem;
+}
+
+.more-videos {
+	display: block;
+	width: 100px;
+	margin: 0.5rem auto 0;
+	background:url(images/down-arrow-large.png) no-repeat bottom center;
+	text-align: center;
+	color: #d09607;
+	font-weight: bold;
+	padding-top:  5px;
+	padding-bottom: 15px;
+}
+
+.more-videos:hover {
+	color: #d09607;
+	padding-bottom: 20px;
+}
+
+.cahnrs-video-gallery {
+	position: relative;
+	z-index: 100;
+	padding: 2rem 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.cahnrs-video-gallery,
+.cahnrs-video-gallery:before,
+.cahnrs-video-gallery:after {
+	background-color: #eee;
+}
+ 
+/**
+ * Start Global Header 
+ *
+ */
+.cahnrs-video-gallery:before,
+.cahnrs-video-gallery:after {
+	content: " ";
+	width: 100%;
+	right: -100%;
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+.cahnrs-video-gallery:before {
+	right: auto;
+	left: -100%;
+}
+
+.cahnrs-video-gallery .cycle-slideshow {
+	margin-right: 200px;
+}
+
+.cahnrs-video-gallery .cycle-slideshow div {
+}
+
+.cahnrs-video-gallery .cycle-slideshow img {
+	width: 80%;
+	margin: 0 auto;
+	height: auto;
+	background-color: #777;
+	display: block;
+	border: 1px solid #ccc;
+}
+
+.cahnrs-video-gallery .cycle-slideshow h4 {
+	font-size: 1rem;
+	width: 80%;
+	margin: 0 auto;
+}
+.cahnrs-video-gallery .center {
+	text-align: center;
+	margin-right: 200px;
+}
+.cahnrs-video-gallery .cycle-pager {
+	text-align: center;
+	margin-right: 200px;
+}
+
+.cahnrs-video-gallery .cycle-pager span {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #ccc;
+	color: #fff;
+	margin: 0 5px;
+}
+.cahnrs-video-gallery .cycle-pager span.cycle-pager-active {
+	background: #D69746;
+}
+
+body.home main .row.side-right .column.one {
+	display: none;
+}
+
