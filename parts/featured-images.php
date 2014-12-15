@@ -4,10 +4,7 @@
     	<h1>Tree Fruit</h1>
         <h2>Washington State University Comprehensive Tree Fruit Site</h2>
         <div class="site-home-widgets">
-        	<div class="video-demo-video">
-                <img class="cahnrs-image-spacer" src="<?php echo CAHNRSCOMMODITIESURL;?>/images/video-placeholder1.png" />
-            </div>
-            <a href="#cahnrs-video-row" class="more-videos">More Videos</a>
+        	
         </div>
     </div>
 </div>
