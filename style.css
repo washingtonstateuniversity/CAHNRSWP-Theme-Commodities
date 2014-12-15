@@ -10,11 +10,16 @@
  * Template:    WSUWP-spine-parent-theme
  */
  
+ 
 body.home {
 	background-image: url('http://treefruitdev.topics.wpdev.cahnrs.wsu.edu/wp-content/themes/wsu-treefruit/images/backgrounds/tree-tunnel.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% auto;
+}
+
+article h1 {
+	color: #981e33; 
 }
  
 #binder {
@@ -229,6 +234,11 @@ body.home main > section .column.one:before,
 	margin: 0 auto;
 }
 
+#cahnrs-treefruit-footer .fruit-nav a .icon img{
+	display: block;
+	max-width: 100%;
+}
+
 #cahnrs-treefruit-footer .title {
 	position: absolute;
 	bottom: 15px;
@@ -242,12 +252,17 @@ body.home main > section .column.one:before,
 /**
  * Start Main Content
 */
+
+
+.fluid .row.side-right .column.one,
 main .row.side-right .column.one {
 	width: auto;
-	margin: 0 200px 0 2rem;
+	margin: 0 200px 0 0;
 	padding: 2rem 0 4rem;
+	float: none;
 }
 
+.fluid .row.side-right .column.two,
 main .row.side-right .column.two {
 	width: 200px;
 	position: absolute;
@@ -257,6 +272,11 @@ main .row.side-right .column.two {
 	top: 0;
 	bottom: 0;
 	z-index: 150;
+	float: none;
+}
+
+main .row.side-right .column.one > article {
+	margin: 0 2rem;
 }
 
 /**
