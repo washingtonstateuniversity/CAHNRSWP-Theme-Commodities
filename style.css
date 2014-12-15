@@ -212,6 +212,9 @@ body.home main > section .column.one:before,
 #cahnrs-treefruit-footer:before,
 #cahnrs-treefruit-footer:after {
 	background-color: #fff;
+	background-image:url(images/red-border.gif);
+	background-repeat: repeat-x;
+	background-position: top center;
 }
 
 #cahnrs-treefruit-footer .fruit-nav {
