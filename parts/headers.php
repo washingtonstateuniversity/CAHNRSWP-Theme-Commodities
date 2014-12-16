@@ -4,10 +4,11 @@
     	<a class="site-title" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
 			<?php bloginfo('name'); ?>
         </a>
-        <form id="site-search" name="site-search" method="get" action="/site-search">
+        <form id="site-search" name="site-search" method="get" action="<?php bloginfo('url'); ?>/site-search">
         	<input id="site-search-field" type="text" value="Search" name="term">
         	<input id="site-search-submit" type="submit" value="">
             <script>
+			
 				jQuery( document ).ready( function( $ ) {
 					
 					var site_search = $( '#site-search-field' );
