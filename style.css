@@ -9,13 +9,25 @@
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
  */
- 
+
+.pagebuilder-item {
+	background-color: transparent !important;
+	padding: 0 !important;
+}
+
+.pagebuilder-row.fixed-background .pagebuilder-row-background {
+	background-position: center center;
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+}
  
 body.home {
 	background-image: url('http://treefruitdev.topics.wpdev.cahnrs.wsu.edu/wp-content/themes/wsu-treefruit/images/backgrounds/tree-tunnel.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100% auto;
+	background-size: cover;
+	background-position: center center;
 }
 
 article h1 {
@@ -92,6 +104,7 @@ body.home main > section .column.one:before,
 	padding: 0;
 	border-radius: 3px;
 	margin-top: 35px;
+	margin-right: 10px;
 }
 
 #cahnrs-global-header #site-search input {
@@ -160,6 +173,13 @@ body.home main > section .column.one:before,
 	color: #d09607;
 	padding: 0 0.5rem;
 	vertical-align: top;
+}
+/**
+ * Start Sidebar Section 
+ *
+ */
+#cahnrs-sidebar .sidebar-title-action {
+	display: none;
 }
 /**
  * Start Home Section 
@@ -269,11 +289,10 @@ main .row.side-right .column.one {
 main .row.side-right .column.two {
 	width: 200px;
 	position: absolute;
-	height: 100%;
+	height: 100vw;
 	background: rgba( 74 , 84 , 89 , 0.8 ) ;
 	right: 0;
 	top: 0;
-	bottom: 0;
 	z-index: 150;
 	float: none;
 }
@@ -289,9 +308,191 @@ main .row.side-right .column.one > article {
 background-repeat: no-repeat;
 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0VGMDQ4RTAzQTg1MTFFNEEyRTJBQjgxMjA4NkQ3RDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0VGMDQ4RTEzQTg1MTFFNEEyRTJBQjgxMjA4NkQ3RDEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRUYwNDhERTNBODUxMUU0QTJFMkFCODEyMDg2RDdEMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRUYwNDhERjNBODUxMUU0QTJFMkFCODEyMDg2RDdEMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtMqVesAAAcOSURBVHja5FdrcFRn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)
 }
+.fluid .row.side-right .column.two,
 #cahnrs-global-header #site-nav-horizontal:before,
 #cahnrs-global-header #site-nav-horizontal:after,
 #cahnrs-global-header #site-nav-horizontal {
 background-repeat: repeat-x;
 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAYAAAB8ZH1oAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTIwQUExREM3RkE1MTFFNDlEQzVCMjZCNjk1MDUyRjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTIwQUExREQ3RkE1MTFFNDlEQzVCMjZCNjk1MDUyRjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFMjBBQTFEQTdGQTUxMUU0OURDNUIyNkI2OTUwNTJGNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFMjBBQTFEQjdGQTUxMUU0OURDNUIyNkI2OTUwNTJGNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpmSaXQAAABJSURBVHjaYmRkYHBgABIY4D8QM0JpIGABcr6hSDJAFTAisf+DFDIwfILrZkQzEQmwAAU+YLWaEdV6RkZGBi4MtzGgmQ4EAAEGAKBBDTZbmTYNAAAAAElFTkSuQmCC)
+}
+
+/**
+ * Down Arrow Grey 
+*/
+#cahnrs-sidebar .sidebar-title-action
+{
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjVFRDRBMTU4NTIwMTFFNDg5RDk5MTYyRUYwOUFFMjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjVFRDRBMTY4NTIwMTFFNDg5RDk5MTYyRUYwOUFFMjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGNUVENEExMzg1MjAxMUU0ODlEOTkxNjJFRjA5QUUyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGNUVENEExNDg1MjAxMUU0ODlEOTkxNjJFRjA5QUUyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PklW/vIAAABrSURBVHjaYjxz5swGBgYGfwb8YCMTkMgB4i94FIHkckEKnwBxDR6FtUD8mAnKmQLE57AoAolNBjFgCv8CcSqUZkASS4OJMaHpnoLEB7HPwjhMaFbVQN38BOo2OGDB4kNQKDAC8WdkCYAAAwDnHxkBK2JZMAAAAABJRU5ErkJggg==)
+}
+
+
+@media only screen and ( max-width: 1000px ) {
+	#site-home-section {
+		margin-right: 0;
+		margin-top: -85px;
+	}
+	
+	#site-home-section h1,
+	#site-home-section h2 {
+		display: none;
+	}
+	
+	
+	#site-home-section .site-home-column {
+		max-width: none;
+	}
+	
+	.fluid .row.side-right .column.one, main .row.side-right .column.one {
+		width: auto;
+		margin: 0;
+		padding: 2rem 0 4rem;
+		float: none;
+	}
+
+	.fluid .row.side-right .column.two,
+	main .row.side-right .column.two {
+		width: 175px;
+		background-color: rgba( 74 , 84 , 89 , 1 ) ;
+		height: 32px;
+		z-index: 500;
+		border-radius: 0 0 2px 2px;
+		top: 60px;
+		right: 0px;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		right: 175px;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		position: relative;
+	}
+	#cahnrs-treefruit-footer .fruit-nav a {
+		height: 115px;
+		background-image:url(images/apple-icon.png);
+		background-repeat: no-repeat;
+		background-position: center 15px;
+		background-size: auto 70px;
+	}
+	
+	#cahnrs-treefruit-footer {
+		height: 115px;
+		margin-top: -115px;
+		position: relative;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav a .icon {
+		display: none;
+		/*background-image:url(images/apple-icon.png);
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: contain;
+		min-height: 75px;*/
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav a .title{
+		display: block;
+		background: #fff;
+		font-size: 0.75rem;
+		bottom: 10px;
+		line-height: 1rem;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav a .icon img {
+		display: none;
+	}
+	
+	#cahnrs-global-header .site-title {
+		
+		height: 60px;
+		line-height: 60px;
+		font-size: 1.5rem;
+	}
+	
+	#cahnrs-global-header #site-search {
+		
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+	
+	#cahnrs-global-header #site-nav-horizontal {
+		padding: 0.1rem 2rem;
+	}
+	
+	#cahnrs-global-header #site-nav-horizontal a {
+		font-size: 0.8rem;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		right: 0;
+	}
+	
+	#site-home-section .site-home-column div {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+	
+	#cahnrs-sidebar .sidebar-title-action {
+		display: block;
+		/*background: transparent url(https://repo.wsu.edu/spine/1/icons/menu.svg) 10px center no-repeat;*/
+		background-position: 1rem center;
+		color: #ccc;
+		padding-left: 35px;
+		line-height: 32px;
+		font-size: 0.9rem;
+	}
+
+}
+
+
+@media only screen and ( max-width: 791px ) {
+	.fluid .row.side-right .column.two,
+	main .row.side-right .column.two {
+		top: 110px;
+	}
+	
+	#site-home-section {
+		margin-top: -140px;
+	}
+	
+}
+
+@media only screen and ( max-width: 600px ) {
+	
+	#cahnrs-global-header .site-title {
+		font-size: 1.2rem;
+	}
+	
+	#cahnrs-global-header #site-search input#site-search-field {
+		width: 125px;
+	}
+	
+	.fluid .row.side-right .column.two,
+	main .row.side-right .column.two {
+		width: auto;
+		padding-right: 1rem;
+	}
+	
+}
+
+@media only screen and ( max-width: 500px ) {
+	
+	#cahnrs-global-header .site-title {
+		font-size: 1rem;
+	}
+	
+}
+
+@media only screen and ( max-width: 400px ) {
+	
+	#cahnrs-global-header #site-search input#site-search-field {
+		width: 100px;
+		font-size: 1rem;
+	}
+	
+	#cahnrs-global-header #site-search input#site-search-submit {
+		width: 30px;
+		padding: 0;
+	}
+	
 }
