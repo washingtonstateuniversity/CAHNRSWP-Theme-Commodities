@@ -7,6 +7,9 @@
         	<?php if ( is_active_sidebar( 'cwp-frontpage-center' ) ) {
                 dynamic_sidebar( 'cwp-frontpage-center' );
 			}; ?>
+            <div class="demo-gallery">
+            	<img src="<?php echo CAHNRSCOMMODITIESURL ;?>/images/video-center.png" />
+            </div>
         </div>
     </div>
 </div>
