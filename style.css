@@ -218,6 +218,37 @@ body.home main > section .column.one:before,
 	font-size: 1.4rem;
 	margin: 0 2rem;
 }
+
+#site-home-section .widget-wrapper {
+	width: 33.33%;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+#site-home-section .widget-wrapper > div {
+	margin: 0 5%;
+}
+
+#site-home-section .widget-wrapper:before {
+	content: "";
+	width: 1px;
+	background: #eab021;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#site-home-section .widget-wrapper:first-child:before {
+	background: transparent;
+}
+
+#site-home-section h4,
+#site-home-section h4 a {
+	font-size: 0.9rem;
+	color: #fff;
+}
 /**
  * Start Tree Fruit Footer
  *
@@ -427,7 +458,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYA
 		right: 0;
 	}
 	
-	#site-home-section .site-home-column div {
+	#site-home-section .site-home-column .site-home-widgets {
 		margin-left: 2rem;
 		margin-right: 2rem;
 	}

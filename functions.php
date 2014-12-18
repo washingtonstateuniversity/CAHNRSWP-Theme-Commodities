@@ -25,8 +25,8 @@ class Init_CAHNRSWP_Commodities {
 			'id'            => 'cwp-frontpage-center',
 			'description'   => '',
         	'class'         => '',
-			'before_widget' => '',
-			'after_widget'  => '',
+			'before_widget' => '<div class="widget-wrapper" >',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' );
 			
