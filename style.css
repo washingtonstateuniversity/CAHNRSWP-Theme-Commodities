@@ -384,10 +384,61 @@ main .row.side-right .column.two {
 	float: none;
 }
 
-.row.side-right .column.two #global-sidebar {
+#global-sidebar {
 	position: fixed;
-	top: 170px;
+	top: 190px;
 	color: #ccc;
+	width: 200px;
+}
+
+#global-sidebar > aside {
+	margin: 0 1rem;
+}
+#global-sidebar .cwp-accordion {
+	position: relative;
+}
+
+#global-sidebar .cwp-accordion h4 {
+	margin: 0;
+	padding: 0;
+}
+
+#global-sidebar .cwp-accordion h4 a{
+	display: block;
+	font-weight: normal;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+	padding: 0.4rem 1rem;
+	font-size: 0.9rem;
+	
+}
+
+#global-sidebar .cwp-accordion.on-hover .cwp-content{
+	position: absolute;
+	width: 250px;
+	right: 100%;
+	top: 0;
+	padding: 1rem;
+	background-color: #333;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+}
+
+#global-sidebar .cwp-accordion.agweather-icon h4 a,
+#global-sidebar .cwp-accordion.das-icon h4 a {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: auto 30px;
+	padding-left: 40px;
+}
+
+#global-sidebar .cwp-accordion.das-icon h4 a {
+	background-image: url(images/das.png);
+}
+
+#global-sidebar .cwp-accordion.agweather-icon h4 a {
+	background-image: url(images/AgWeatherNet.png);
 }
 
 
