@@ -20,8 +20,8 @@ class Init_CAHNRSWP_Commodities {
 	
 	public function cahnrswp_widgets_init(){
 		
-		$args = array(
-			'name'          => __( 'Front Page Center', 'theme_text_domain' ),
+		$front_center = array(
+			'name'          => 'Front Page Center',
 			'id'            => 'cwp-frontpage-center',
 			'description'   => '',
         	'class'         => '',
@@ -30,7 +30,19 @@ class Init_CAHNRSWP_Commodities {
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' );
 			
-		register_sidebar( $args );
+		/*$sidebar = array(
+			'name'          => 'Sidebar',
+			'id'            => 'cwp-sidebar-widget-area',
+			'description'   => '',
+        	'class'         => '',
+			'before_widget' => '<div class="widget-wrapper" >',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>' );*/
+			
+		register_sidebar( $front_center );
+		
+		/*register_sidebar( $sidebar );*/
 		
 	} // end cahnrswp_widgets_init
 	

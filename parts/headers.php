@@ -2,7 +2,7 @@
 <header id="cahnrs-global-header">
 	<div id="site-banner">
     	<a class="site-title" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-			<?php bloginfo('name'); ?>
+			<?php bloginfo('name'); ?> <span><?php bloginfo('description'); ?></span>
         </a>
         <form id="site-search" name="site-search" method="get" action="<?php bloginfo('url'); ?>/site-search">
         	<input id="site-search-field" type="text" value="Search" name="term">

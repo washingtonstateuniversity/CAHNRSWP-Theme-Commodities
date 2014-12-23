@@ -89,13 +89,27 @@ body.home main > section .column.one:before,
 	background: #981e33;
 }
 
+#cahnrs-global-header #site-banner{
+	display: table;
+	width: 100%;
+	height: 110px;
+}
+
 #cahnrs-global-header .site-title {
 	display: inline-block;
-	height: 110px;
-	line-height: 110px;
+	display: table-cell;
+    vertical-align: middle;
+	/*height: 110px;
+	line-height: 110px;*/
 	color: #fff;
 	font-size: 2rem;
 	padding: 0 2rem;
+}
+#cahnrs-global-header .site-title span {
+	display: block;
+	font-size: 1.1rem;
+	letter-spacing: 1px;
+	padding-top: 0.25rem;
 }
 
 #cahnrs-global-header #site-search {
@@ -221,13 +235,7 @@ body.home main > section .column.one:before,
 	text-align: center;
 	font-weight: bold;
 	font-size: 4rem;
-}
-
-#site-home-section h2 {
-	border-top: 2px solid #eab021;
-	color: #eab021;
-	text-align: center;
-	font-size: 1.4rem;
+	border-bottom: 2px solid #eab021;
 	margin: 0 2rem 0.5rem;
 }
 
@@ -280,6 +288,18 @@ body.home main > section .column.one:before,
 #site-home-section .cwp-post-date {
 	color: #eab021;
 	font-size: 0.75rem;
+}
+
+#site-home-section .cwp-image {
+	height: 120px;
+	overflow: hidden;
+}
+#site-home-section .cwp-image img {
+	margin-top: -25px;
+}
+#site-home-section .cwp-content {
+	font-size: 0.8rem;
+	line-height: 1rem;
 }
 /**
  * Start Tree Fruit Footer
@@ -348,11 +368,15 @@ main .row.side-right .column.one {
 	float: none;
 }
 
+main .row.side-right .column.one > article {
+	margin: 0 2rem;
+}
+
 .fluid .row.side-right .column.two,
 main .row.side-right .column.two {
 	width: 200px;
 	position: absolute;
-	height: 100vw;
+	height: 100%;
 	background: rgba( 74 , 84 , 89 , 0.8 ) ;
 	right: 0;
 	top: 0;
@@ -360,9 +384,13 @@ main .row.side-right .column.two {
 	float: none;
 }
 
-main .row.side-right .column.one > article {
-	margin: 0 2rem;
+.row.side-right .column.two #global-sidebar {
+	position: fixed;
+	top: 170px;
+	color: #ccc;
 }
+
+
 
 /**
  * Base 64 encoded UI icons
@@ -398,7 +426,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 
 @media only screen and ( max-width: 1000px ) {
 	#site-home-section {
-		margin-right: 0;
+		/*margin-right: 0;*/
 		margin-top: -85px;
 	}
 	
@@ -411,14 +439,14 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#site-home-section .site-home-column {
 		max-width: none;
 		padding-bottom: 130px;
-		padding-top: 120px;
+		padding-top: 110px;
 	}
 	
 	#site-home-section:before {
 		background-size: 100% 100%;
 	}
 	
-	.fluid .row.side-right .column.one, main .row.side-right .column.one {
+	/*.fluid .row.side-right .column.one, main .row.side-right .column.one {
 		width: auto;
 		margin: 0;
 		padding: 2rem 0 4rem;
@@ -434,11 +462,11 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		border-radius: 0 0 2px 2px;
 		top: 60px;
 		right: 0px;
-	}
+	}*/
 	
-	#cahnrs-treefruit-footer .fruit-nav {
+	/*#cahnrs-treefruit-footer .fruit-nav {
 		right: 175px;
-	}
+	}*/
 	
 	#cahnrs-treefruit-footer .fruit-nav {
 		position: relative;
@@ -478,11 +506,17 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		display: none;
 	}
 	
-	#cahnrs-global-header .site-title {
-		
+	
+	#cahnrs-global-header #site-banner{
 		height: 60px;
-		line-height: 60px;
+	}
+	
+	#cahnrs-global-header .site-title {
 		font-size: 1.5rem;
+	}
+	
+	#cahnrs-global-header .site-title span {
+		display: none;
 	}
 	
 	#cahnrs-global-header #site-search {
@@ -499,8 +533,12 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		font-size: 0.8rem;
 	}
 	
-	#cahnrs-treefruit-footer .fruit-nav {
+	/*#cahnrs-treefruit-footer .fruit-nav {
 		right: 0;
+	}*/
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		margin-right: 200px;
 	}
 	
 	#site-home-section .site-home-widgets {
@@ -520,6 +558,54 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 
 }
 
+@media only screen and ( max-width: 950px ) {
+	
+	.fluid .row.side-right .column.two,
+	main .row.side-right .column.two {
+		display: none;
+	}
+	
+	#site-home-section {
+		margin-right: 0;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		margin-right: 0;
+	}
+}
+
+/*@media only screen and ( min-width: 792px ) and ( max-width: 900px ) {
+	
+	#site-home-section .widget-wrapper {
+		vertical-align: top;
+		position: relative;
+		display: block;
+		width: auto;
+		margin-bottom: 0.5rem;
+	}
+	
+	#site-home-section .widget-wrapper .cwp-image {
+		width: 100px;
+		height: 60px;
+		float: left;
+		overflow: hidden;
+	}
+	
+	#site-home-section .widget-wrapper .cwp-content {
+		margin-left: 110px;
+		min-height: 60px;
+	}
+	
+	#site-home-section .widget-wrapper h3 {
+		text-align: left;
+	}
+	
+	#site-home-section .widget-wrapper:before {
+		background: transparent;
+	}
+	
+}*/
+
 
 @media only screen and ( max-width: 791px ) {
 	.fluid .row.side-right .column.two,
@@ -535,6 +621,11 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		padding-top: 160px;
 	}
 	
+	#site-home-section .cwp-image {
+		height: auto;
+		overflow: hidden;
+	}
+	
 }
 
 @media only screen and ( max-width: 650px ) {
@@ -543,7 +634,6 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		margin-left: 1rem;
 		margin-right: 1rem;
 	}
-	
 }
 
 @media only screen and ( max-width: 600px ) {
@@ -555,13 +645,6 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#cahnrs-global-header #site-search input#site-search-field {
 		width: 125px;
 	}
-	
-	.fluid .row.side-right .column.two,
-	main .row.side-right .column.two {
-		width: auto;
-		padding-right: 1rem;
-	}
-	
 }
 
 @media only screen and ( max-width: 500px ) {
@@ -589,7 +672,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		overflow: hidden;
 	}
 	
-	#site-home-section .widget-wrapper .cwp-content {
+	#site-home-section .widget-wrapper .has-image .cwp-content {
 		margin-left: 90px;
 		min-height: 70px;
 	}
@@ -618,8 +701,8 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	
 }
 
-@media only screen and ( max-height: 780px ) {
-	#site-home-section h2,
+@media only screen and ( max-height: 750px ) {
+	
 	#site-home-section h1 {
 		display: none;
 	}

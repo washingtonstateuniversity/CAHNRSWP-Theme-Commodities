@@ -1,5 +1,7 @@
-<div id="cahnrs-sidebar">
-    <a href="#" class="sidebar-title-action"><?php echo apply_filters( 'cahnrswp_sidebar_title' , 'Tools' );?></a>
-    <aside class="sidebar-widget-area">
+<div id="global-sidebar">
+    <aside id="sidebar-widget-area">
+    	<?php if ( is_active_sidebar( 'sidebar' ) ) {
+                dynamic_sidebar( 'sidebar' );
+			}; ?>
     </aside>
 </div>
