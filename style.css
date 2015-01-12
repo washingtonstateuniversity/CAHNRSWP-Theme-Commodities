@@ -30,6 +30,10 @@ body.home {
 	background-position: center center;
 }
 
+h4 {
+	font-size: 1.1rem;
+}
+
 article h1 {
 	color: #981e33; 
 }
@@ -40,6 +44,10 @@ article h1 {
 
 body main > section { 
 	position: static;
+}
+
+body.home h1 {
+	display: none;
 }
 
 body.home main > section .column.one,
@@ -290,13 +298,7 @@ body.home main > section .column.one:before,
 	font-size: 0.75rem;
 }
 
-#site-home-section .cwp-image {
-	height: 120px;
-	overflow: hidden;
-}
-#site-home-section .cwp-image img {
-	margin-top: -25px;
-}
+
 #site-home-section .cwp-content {
 	font-size: 0.8rem;
 	line-height: 1rem;
@@ -439,6 +441,110 @@ main .row.side-right .column.two {
 
 #global-sidebar .cwp-accordion.agweather-icon h4 a {
 	background-image: url(images/AgWeatherNet.png);
+}
+
+/**
+ * Video Section
+*/
+
+.video-post-content.has_sidebar > article {
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+}
+
+.video-post-sidebar {
+	
+	display: inline-block;
+	width: 20%;
+	vertical-align: top;
+	border-left: 1px solid #ddd;
+}
+
+.video-post-sidebar h3{
+	text-transform: uppercase;
+	font-size: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+.video-post-sidebar h4{
+	font-size: 1rem;
+}
+
+.video-post-sidebar .widget-wrapper {
+	max-width: 90%;
+	margin-left: 5%;
+}
+
+.ctwp-image-wrapper {
+	position: relative;
+}
+
+.has-image.video .ctwp-image-wrapper a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url(images/play.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	top: 0;
+	left: 0;
+}
+
+.ctwp-gallery-item {
+	display: inline-block;
+	width: 23%;
+	vertical-align: top;
+	padding-bottom: 2rem;
+	margin: 0 1%;
+}
+
+.ctwp-gallery-item .ctwp-image-wrapper img{
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+form.search-bar {
+	position: relative;
+	padding: 0;
+	margin-bottom: 3rem;
+}
+
+.search-bar input.search-text {
+	display: block;
+	width: 100%;
+	font-size: 1.2rem;
+	line-height: 40px;
+	height: 40px;
+	text-indent: 1rem;
+	border-radius: 8px;
+}
+
+.search-bar input[type=submit] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 40px;
+	padding: 0 2rem;
+	font-size: 1.2rem;
+}
+
+.cwp-more-link {
+	display: inline-block;
+	padding: 0.1rem 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
+	background: #555;
+	color: #999;
+	border-radius: 4px;
+	font-size: 0.8rem;
+}
+
+.cwp-more-link:hover {
+	background: #444;
+	color: #ccc;
 }
 
 
@@ -606,16 +712,32 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		line-height: 32px;
 		font-size: 0.9rem;
 	}
-
-}
-
-@media only screen and ( max-width: 950px ) {
 	
 	.fluid .row.side-right .column.two,
 	main .row.side-right .column.two {
 		display: none;
 	}
 	
+	.fluid .row.side-right .column.one,
+	main .row.side-right .column.one {
+		width: auto;
+		margin: 0 0 0 0;
+		padding: 2rem 0 4rem;
+		float: none;
+	}
+	
+	#site-home-section {
+		margin-right: 0;
+	}
+	
+	#cahnrs-treefruit-footer .fruit-nav {
+		margin-right: 0;
+	}
+
+}
+
+@media only screen and ( max-width: 950px ) {
+		
 	#site-home-section {
 		margin-right: 0;
 	}
@@ -685,6 +807,24 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		margin-left: 1rem;
 		margin-right: 1rem;
 	}
+	
+	.video-post-content.has_sidebar > article {
+		display: block;
+		width: auto;
+	}
+	
+	.video-post-sidebar {
+		
+		display: block;
+		width: auto;
+		border-left: none;
+	}
+	.video-post-sidebar .widget-wrapper {
+		vertical-align: top;
+		display: inline-block;
+		width: 42%;
+		margin: 1rem 4% 0;
+	}
 }
 
 @media only screen and ( max-width: 600px ) {
@@ -696,6 +836,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#cahnrs-global-header #site-search input#site-search-field {
 		width: 125px;
 	}
+	
 }
 
 @media only screen and ( max-width: 500px ) {
@@ -717,15 +858,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	}
 	
 	#site-home-section .widget-wrapper .cwp-image {
-		width: 80px;
-		height: 70px;
-		float: left;
-		overflow: hidden;
-	}
-	
-	#site-home-section .widget-wrapper .has-image .cwp-content {
-		margin-left: 90px;
-		min-height: 70px;
+		display:none;
 	}
 	
 	#site-home-section .widget-wrapper h3 {
