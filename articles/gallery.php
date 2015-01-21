@@ -4,19 +4,11 @@
 
 	$post_link_end = '</a>';
 	
-	$has_image = false;
-	
-	if ( has_post_thumbnail() ){
-		
-		$post_image = get_the_post_thumbnail( $post->ID , 'thumbnail' );
-		
-		$has_image = ' has-image';
-		
-	}; // end if
+	$post_image = get_the_post_thumbnail( $post->ID , 'thumbnail' );
 
-?><div class="ctwp-gallery-item<?php if( $has_image ) echo $has_image;?> <?php echo $post->post_type;?>" >
+?><div class="ctwp-gallery-item<?php if( ! empty( $post_image ) ) echo ' has-image';?> <?php echo $post->post_type;?>" >
 	
-    <?php if( $has_image ) :?>
+    <?php if( ! empty( $post_image ) ) :?>
     
     	<div class="ctwp-image-wrapper">
         

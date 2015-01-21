@@ -77,10 +77,7 @@ class Init_CAHNRSWP_Commodities {
 			
 		}; // end if
 		
-	}
-	
-	
-	
+	} // end method get_horizontal_nav_menu
 }
 
 $cahnrswp_commodities = new Init_CAHNRSWP_Commodities();
