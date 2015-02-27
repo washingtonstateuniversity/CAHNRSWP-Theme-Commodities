@@ -4,11 +4,15 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     0.0.3
+ * Version:     0.0.6
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
  */
+
+body {
+	word-wrap: break-word;
+}
 
 .pagebuilder-item {
 	background-color: transparent !important;
@@ -392,13 +396,15 @@ main .row.side-right .column.two {
 
 #global-sidebar {
 	position: fixed;
-	top: 190px;
+	height: 100vh;
+	/*padding-top: 190px;*/
 	color: #ccc;
 	width: 200px;
 }
 
 #global-sidebar > aside {
 	margin: 0 1rem;
+	padding-top: 170px;
 }
 #global-sidebar .cwp-accordion {
 	position: relative;
@@ -445,6 +451,23 @@ main .row.side-right .column.two {
 
 #global-sidebar .cwp-accordion.agweather-icon h4 a {
 	background-image: url(images/AgWeatherNet.png);
+}
+
+#global-sidebar #endownment-logo {
+	position: absolute;
+	bottom: -1px;
+	width: 100%;
+	background-color: #fff;
+	background-image: url(images/red-border.gif);
+	background-repeat: repeat-x;
+	background-position: center top;	
+}
+
+#global-sidebar #endownment-logo .logo{
+	height: 84px;
+	background-image: url(images/endownment-logo.jpg);
+	background-repeat: no-repeat;
+	background-position: center 8px ;
 }
 
 /**
@@ -550,6 +573,300 @@ form.search-bar {
 	background: #444;
 	color: #ccc;
 }
+
+.cwp-submenu-wrapper {
+	position: relative;
+	padding-bottom: 3rem;
+}
+
+.cwp-submenu-wrapper nav.cwp-submenu-section h3 {
+	font-size: 0.8rem;
+	color: #cc3333;
+	border-bottom: 2px solid #cc9999;
+}
+
+.cwp-submenu-wrapper nav.cwp-submenu-section ul {
+	margin: 0.5rem 0;
+	padding: 0;
+}
+.cwp-submenu-wrapper nav.cwp-submenu-section li {
+	margin: 0;
+	padding: 0;
+}
+
+.cwp-submenu-wrapper nav.cwp-submenu-section a {
+	font-size: 0.9rem;
+	color: #777;
+	display: block;
+	padding: 0.25rem 0 0.25rem 20px;
+}
+
+.cwp-submenu-wrapper nav.cwp-submenu-section .active-article a {
+	font-weight: bold;
+	color: #cc3333;
+}
+
+.cwp-submenu-wrapper div.cwp-submenu-section > article {
+}
+
+.cwp-submenu-wrapper .submenu-article a.more-link{
+	display: block;
+	border-bottom: 2px solid #981e33;
+	font-weight: bold;
+	padding-top: 1rem;
+}
+
+/*
+ * Category Page
+*/
+.category-nav ul {
+	padding: 1rem 0 0;
+	margin: 0;
+}
+
+.category-nav ul li {
+	display: inline-block;
+	width: 33.33%;
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+}
+
+.category-nav ul li a {
+	color: #777;
+	font-size: 1rem;
+	display: block;
+	padding: 0.25rem;
+	border-bottom: 4px solid #ccc;
+}
+
+.category-nav ul li a.active-section {
+	color: #c60c30;
+	font-weight: bold;
+	border-bottom: 4px solid #cc9999;
+}
+
+.category-sections {
+	margin-bottom: 4rem;
+}
+
+#results-set {
+	background: #fff;
+	padding: 1rem;
+	border-radius: 3px;
+}
+
+#post-type-archive #archive-header {
+	padding-bottom: 2rem;
+}
+
+#post-type-archive h1 {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 2rem;
+}
+
+#post-type-archive form.search-bar {
+	width: 300px;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+
+#post-type-archive .recent-archive {
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 2%;
+}
+#post-type-archive .category-archive {
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#post-type-archive .category-archive li {
+	margin: 0 0 0 1rem;
+	font-size: 1rem;
+	padding: 0;
+}
+#post-type-archive .category-archive li.active li a {
+	color: #cc3333;
+	font-size: 0.9rem;
+	padding: 0.3rem 0;
+	line-height: 1rem;
+}
+#post-type-archive .category-archive li.active >  a {
+	font-weight: bold;
+	color: #cc3333;
+}
+
+#post-type-archive .category-archive ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#post-type-archive .category-archive li > a {
+	color: #555;
+	display: block;
+}
+
+#post-type-archive h3 {
+	color: #cc3333;
+	border-bottom: 2px solid #cc9999;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+}
+
+/*
+ * Commodity Tabs
+*/
+.commodities-tabs {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.commodities-tabs li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	background-color: #5b6870;
+}
+
+.commodities-tabs li.active-section {
+	background-color: #981e33;
+}
+
+.commodities-tabs li a {
+	display: block;
+	margin: 0;
+	padding: 0 3rem;
+	font-size: 1rem;
+	color: #fff;
+	position: relative;
+	text-transform: uppercase;
+	height: 36px;
+	line-height: 36px;
+}
+.commodities-tabs li a:before {
+	content: "";
+	position: absolute;
+	width: 5px;
+	background: #000;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+}
+.commodities-tabs li.active-section a:before {
+	content: "";
+	position: absolute;
+	/*width: 10;*/
+	/*height: 100%;*/
+	top: 0;
+	left: 0;
+	width: 0; 
+	height: 0; 
+	border-top: 18px solid transparent;
+	border-bottom: 18px solid transparent; 
+	
+	border-left:10px solid #fff; 
+}
+
+.commodities-tabs-content-wrapper {
+	
+	border: 3px solid #981e33;
+	padding: 1.5rem 0 2rem;
+}
+
+.cwp-tab-content {
+	display: none;
+}
+
+.cwp-tab-content.active-section {
+	display: block;
+}
+/*
+ * Promo
+*/
+.cwpc-promo {
+	
+	min-height: 120px;
+}
+
+.cwpc-promo .cwpc-image-wrapper {
+	width: 150px;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+}
+.cwpc-promo .cwpc-caption {
+	display: block;
+	margin-left: 165px;
+	
+}
+
+/*
+ * Variety Tab
+*/
+.cwpvarietytab-wrapper {
+}
+.cwpvarietytab-wrapper .cwpvarietytab-tab {
+	background: #ddd;
+	border-radius: 3px 3px 0 0;
+	margin-right: 3px;
+	font-weight: bold;
+}
+.cwpvarietytab-wrapper .cwpvarietytab-content {
+	border: 2px solid #ddd;
+	border-radius: 0 3px 3px 3px;
+	padding: 2rem 0;
+}
+
+.cwpvarietytab-wrapper .cwpvarietytab-content > .inner-wrapper {
+	margin: 0 2rem;
+}
+
+.cwpvarietytab-wrapper .cwpvarietytab-content .cwp-content h4 {
+	font-size: 0.9rem;
+	margin: 0 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.cwpvarietytab-content .cwp-item.gallery > li {
+	background: #eee;
+	border-left: 3px solid #eee;
+	border-right: 3px solid #eee;
+	padding: 5px 0;
+}
+
+
+/*
+ * Object styling
+*/
+
+.search-result {
+	padding: 0.5rem 0rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.promo-small h4 {
+	padding-top: 0;
+}
+
 
 
 
@@ -910,4 +1227,54 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#site-home-section h1 {
 		display: none;
 	}
+}
+
+/*
+ * Print Styling
+*/
+@media only print {
+
+	#binder {
+	width: auto;
+	margin: 0 auto;
+	}
+	
+	main .row.side-right .column.one > article {
+	margin: 0;
+	}
+	
+	.fluid .row.side-right .column.two, main .row.side-right .column.two {
+	display: none;
+	}
+	
+	.fluid .row.side-right .column.one, main .row.side-right .column.one {
+	width: auto;
+	margin: 0;
+	}
+
+
+/*
+ * Demo
+*/ 
+.content-banner {
+	overflow: hidden;
+}
+.content-banner .content-banner-inner {
+	min-height: 500px;
+	margin-top: -150px;
+	background-position: center center;
+	background-size: cover;
+	background-image: url(http://treefruitdev.topics.wpdev.cahnrs.wsu.edu/wp-content/uploads/sites/5/2014/10/apples-no-copyright-do-not-use.jpg);
+	position: relative;
+	top: 0;
+}
+
+.section-accordion {
+	font-size: 1.4rem;
+	padding: 2rem 2rem;
+	margin-top: 1rem;
+	background-color: #eee;
+	background-image: url( http://cahnrs.wsu.edu/wp-content/plugins/cahnrs-core/images/accordion-plus.svg );
+	background-repeat: no-repeat;
+	background-position: 98% center;
 }

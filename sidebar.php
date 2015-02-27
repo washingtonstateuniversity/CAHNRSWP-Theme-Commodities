@@ -4,4 +4,8 @@
                 dynamic_sidebar( 'sidebar' );
 			}; ?>
     </aside>
+    <div id="endownment-logo">
+    	<div class="logo">
+        </div>
+    </div>
 </div>
