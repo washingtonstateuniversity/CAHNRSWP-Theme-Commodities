@@ -4,7 +4,7 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     0.0.6
+ * Version:     0.0.7
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
@@ -468,6 +468,53 @@ main .row.side-right .column.two {
 	background-image: url(images/endownment-logo.jpg);
 	background-repeat: no-repeat;
 	background-position: center 8px ;
+}
+
+#global-sidebar .tribe-events-list-widget header{
+	font-size: 0.9rem;
+	color: #eab021;
+	text-transform: uppercase;
+}
+#global-sidebar .tribe-events-list-widget ol{
+	margin: 0;
+	padding: 0;
+}
+
+#global-sidebar .tribe-events-list-widget-events {
+	border-top: 1px solid #ccc;
+	padding: 0.25rem 0;
+	margin: 0;
+	background-image:url(images/calendar-icon.png);
+	background-size: 20px auto;
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+}
+
+#global-sidebar .tribe-events-list-widget h4 {
+	margin: 0;
+	padding: 0;
+}
+#global-sidebar .tribe-events-list-widget h4 a {
+	color: #ddd;
+	font-weight: normal;
+	font-size: 0.9rem;
+}
+#global-sidebar .tribe-events-list-widget .duration {
+	color: #ddd;
+	font-weight: normal;
+	font-size: 0.6rem;
+	line-height: 0.9rem;
+}
+
+#global-sidebar .tribe-events-list-widget-events > h4,
+#global-sidebar .tribe-events-list-widget-events > div
+ {
+	margin-left: 25px;
+}
+
+#global-sidebar .tribe-events-widget-link a {
+	color: #eab021;
+	font-size: 0.8rem;
 }
 
 /**
