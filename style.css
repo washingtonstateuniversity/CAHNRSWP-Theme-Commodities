@@ -469,6 +469,44 @@ main .row.side-right .column.two {
 	background-repeat: no-repeat;
 	background-position: center 8px ;
 }
+/*
+ * Browse Section
+*/
+#browse-options {
+	
+}
+#browse-options a {
+	display: inline-block;
+	width: 33%;
+	margin-right: 0.33%;
+	background: #b5babe;
+	color: #fff;
+	font-size: 1rem;
+	padding: 0.3rem 0;
+	text-align: center;
+	position: relative;
+}
+
+#browse-options a.selected:after {
+content: '';
+position: absolute;
+top: 100%;
+width: 0;
+height: 0;
+left: 50%;
+border-width: 10px 10px 0;
+border-style: solid;
+border-color: #b5babe transparent;
+margin-left: -5px;
+display: block;
+}
+
+#browse-section-featured .promo-small {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+	margin-right: 2%;
+}
 
 /**
  * Video Section
@@ -865,6 +903,15 @@ form.search-bar {
 
 .promo-small h4 {
 	padding-top: 0;
+}
+/*
+ * Plugins Stype
+*/
+.cwp-hybrid-select {
+	display: inline-block;
+	width: 200px;
+	max-width: 100%;
+	vertical-align: top;
 }
 
 

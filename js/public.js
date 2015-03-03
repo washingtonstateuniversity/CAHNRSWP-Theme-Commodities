@@ -98,8 +98,44 @@ jQuery(document).ready(function( $ ){
 		
 		banner.css( 'top', b_scr + 'px' );
 		
-		
 	}); // end window scroll
 	
 	
 }); // end document ready
+
+jQuery( document ).ready( function($){
+	
+	$('body').on( 'click' , '#browse-options a' , function( event ){
+		
+		event.preventDefault();
+		
+		var c = $( this );
+		
+		c.addClass('selected').siblings().removeClass('selected'); 
+		
+		c.parent().siblings('.browse-section').eq( c.index() ).show().siblings('.browse-section').hide();
+		
+	});
+	
+	$('body').on( 'click' , '#browse-options a' , function( event ){
+		
+		event.preventDefault();
+		
+		var c = $( this );
+		
+		c.addClass('selected').siblings().removeClass('selected'); 
+		
+		c.parent().siblings('.browse-section').eq( c.index() ).show().siblings('.browse-section').hide();
+		
+	});
+	
+	$('body').on( 'change' , '.browse-section input, .browse-section select' , function( event ){
+		
+		event.preventDefault();
+		
+		alert( 'fire');
+		
+	});
+	
+});
+

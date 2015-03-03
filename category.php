@@ -14,31 +14,11 @@
     	
         <article>
 	
-			<?php get_template_part( 'parts/category-header' ); ?>
+		<?php get_template_part( 'parts/browse-options' );?>
         
-            <div class="category-sections">
-            
-				<?php
-                $c_section = ( ! empty( $_GET['section'] ) )? $_GET['section'] : 'featured';
-                
-                switch( $c_section ){
-                    
-                    case 'az-index':
-                        get_template_part( 'parts/category-section' , 'az-index' );
-                        break;
-                    case 'search':
-                        get_template_part( 'parts/category-section', 'search' );
-                        break;
-                    default:
-                        get_template_part( 'parts/category-section' );
-                        break;
-                    
-                }; // end switch
-                ?>
-            
-            </div>
-            
-            <?php get_template_part( 'parts/category-related' ); ?>
+        <?php get_template_part( 'parts/browse-section-featured' );?>
+        
+        <?php get_template_part( 'parts/browse-section-browse' );?>
         
         </article>
 		

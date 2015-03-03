@@ -8,6 +8,10 @@ require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-query.php';
 
 require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-article.php';
 
+require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-form.php';
+
+require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-post.php';
+
 class Init_CAHNRSWP_Commodities {
 	
 	public function __construct(){
@@ -26,7 +30,21 @@ class Init_CAHNRSWP_Commodities {
 		
 		add_filter( 'the_title' , array( $this, 'cwp_filter_title' ) );
 		
+		add_filter( 'template_include', array( $this , 'cahnrswp_template_include' ), 99 );
+		
 	} // end __construct
+	
+	public function cahnrswp_template_include( $template ){
+		
+		if ( ! empty( $_POST['ccwp_ajax'] ) ){
+			
+			$template = CAHNRSCOMMODITIESDIR . '/templates/ccwp-ajax.php';
+			
+		}
+		
+		return $template;
+		
+	}
 	
 	public function get_featured_categories(){
 		
