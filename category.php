@@ -16,7 +16,7 @@
 	
 		<?php get_template_part( 'parts/browse-options' );?>
         
-        <?php get_template_part( 'parts/browse-section-featured' );?>
+        <?php get_template_part( 'parts/browse-section-search' );?>
         
         <?php get_template_part( 'parts/browse-section-browse' );?>
         

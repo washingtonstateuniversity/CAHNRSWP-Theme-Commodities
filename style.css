@@ -501,11 +501,40 @@ margin-left: -5px;
 display: block;
 }
 
-#browse-section-featured .promo-small {
+#browse-section-search .search-box {
+	position: relative;
+	margin: 1rem 0;
+}
+
+#browse-section-search .search-box input {
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 1.2rem;
+	border-radius: 4px;
+}
+
+#browse-section-search .search-box a.submit {
 	display: inline-block;
-	vertical-align: top;
-	width: 48%;
-	margin-right: 2%;
+	padding: 0 2rem;
+	height: 35px;
+	line-height: 35px;
+	font-size: 1.2rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #981e33;
+	color: #fff;
+	border-radius: 4px;
+}
+
+#browse-section-search > .form-results {
+	padding: 1rem 0;
+}
+
+#browse-section-search > .form-results > h4 {
+	border-bottom: 1px solid #777;
 }
 
 /**

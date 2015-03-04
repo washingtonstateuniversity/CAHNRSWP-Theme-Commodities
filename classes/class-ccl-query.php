@@ -15,7 +15,9 @@ class CCL_Query_Commodities {
 			'order', 
 			'orderby',
 			'post_type',
-			'category__and', 
+			'category__and',
+			's',
+			'offset', 
 		);
 		
 		foreach( $query_keys as $qk ){

@@ -22,6 +22,8 @@ $ccl_query = new CCL_Query_Commodities();
 
 $query_args = $ccl_query->get_query_from_post();
 
+var_dump( $query_args );
+
 /*
 var_dump( $query_args );
 
