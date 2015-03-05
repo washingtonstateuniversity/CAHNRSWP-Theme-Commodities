@@ -69,7 +69,7 @@ class CCL_Form_Commodities {
 				
 				$active = ( $input_value ===  $args['current_value'] ) ? ' active' : '';
 				
-				$style = ( $active )? '' : ' style="display: none;"'; 
+				$style = ( $active )? ' style="display: none;"' : ''; 
 				
 				$html .= '<div class="' . $active . '"' . $style . '>';
 				
@@ -210,6 +210,104 @@ class CCL_Form_Commodities {
 		} // end foreach
 		
 		return $values;
+		
+	}
+	
+	public function get_search_form( $default = '', $presets = array() , $is_hidden = false ){
+		
+		if ( empty( $presets['posts_per_page'] ) ){
+			
+			$presets['posts_per_page'] = 8;
+			
+		} // end if
+		
+		$style = ( $is_hidden )? 'display:none;' : '';
+		
+		$html = '<form id="post-search" style="' . $style . '" data-results="' . $results_count . '" class="dynamic-form dynamic-section" action="' . get_site_url() . '" >';
+		
+			$html .= '<fieldset class="hidden-field-set">';
+			
+				$html .= '<input type="hidden" name="ccwp_ajax" value="true" />';
+				
+				$html .= '<input type="hidden" name="posts_per_page" value=' . $results_count . ' />';
+				
+				$html .= '<input type="hidden" name="offset" value=0 />';
+			
+				foreach ( $presets as $name => $value ){
+					
+					$html .= '<input type="hidden" name="' . $name . '" value="' . $value . '" />';
+					
+				} // end foreach
+			
+			$html .= '</fieldset>';
+			
+			$html .= '<fieldset class="form-fields">';
+			
+				$html .= '<div class="input-wrapper search-bar">';
+				
+					$html .= '<input type="text" class="search-field" name="s" value="" />';
+					
+					$html .= '<input type="submit" class="search-submit" value="Search" />';
+				
+				$html .= '</div>';
+			
+			$html .= '</fieldset>';
+			
+			$html .= '<div class="results-set">';
+			
+				$html .= $default;
+			
+			$html .= '</div>';
+		
+		$html .= '</form>';
+		
+		return $html;
+		
+	}
+	
+	public function get_browse_form( $default = '', $form_html = '' ,$presets = array() , $is_hidden = false ){
+		
+		if ( empty( $presets['posts_per_page'] ) ){
+			
+			$presets['posts_per_page'] = 8;
+			
+		} // end if
+		
+		$style = ( $is_hidden )? 'display:none;' : '';
+		
+		$html = '<form id="post-browse" style="' . $style . '" data-results="' . $results_count . '" class="dynamic-form dynamic-section" action="' . get_site_url() . '" >';
+		
+			$html .= '<fieldset class="hidden-field-set">';
+			
+				$html .= '<input type="hidden" name="ccwp_ajax" value="true" />';
+				
+				$html .= '<input type="hidden" name="posts_per_page" value=' . $results_count . ' />';
+				
+				$html .= '<input type="hidden" name="offset" value=0 />';
+			
+				foreach ( $presets as $name => $value ){
+					
+					$html .= '<input type="hidden" name="' . $name . '" value="' . $value . '" />';
+					
+				} // end foreach
+			
+			$html .= '</fieldset>';
+			
+			$html .= '<fieldset class="form-fields">';
+			
+				$html .= $form_html;
+			
+			$html .= '</fieldset>';
+			
+			$html .= '<div class="results-set">';
+			
+				$html .= $default;
+			
+			$html .= '</div>';
+		
+		$html .= '</form>';
+		
+		return $html;
 		
 	}
 	

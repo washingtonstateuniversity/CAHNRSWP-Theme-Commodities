@@ -103,6 +103,10 @@ jQuery(document).ready(function( $ ){
 	
 }); // end document ready
 
+/*
+ * Old Form
+*/
+
 jQuery( document ).ready( function($){
 	
 	$('body').on( 'click' , '#browse-options a' , function( event ){
@@ -158,4 +162,80 @@ jQuery( document ).ready( function($){
 	});
 	
 });
+
+jQuery( document ).ready( function( $ ){
+	
+	$('body').on( 'click' , '#browse-options a' , function( event ){
+		
+		event.preventDefault();
+		
+		var c = $( this );
+		
+		c.addClass('selected').siblings().removeClass('selected'); 
+		
+		c.parent().siblings('.dynamic-section').eq( c.index() ).show().siblings('.dynamic-section').hide();
+		
+	});
+	
+	$( '#post-browse.dynamic-form' ).on( 'change' , 'input,select' , function(){
+		
+		$( this ).parents('form').trigger( 'submit' );
+		
+	});
+	
+	
+	$( '.dynamic-form' ).on( 'submit' , function( event ){
+		event.preventDefault();
+		
+		var form = $( this );
+		
+		form.find( 'input[name="offset"]' ).val( 0 );
+		
+		$.post( 
+			form.attr("action"), 
+			form.serializeArray(), 
+			function( data ) {
+				var results = form.find('.results-set');
+				results.html( data );
+				
+				if ( ! form.find('.more-results').length ) {
+					
+					results.after( '<a href="#" class="more-results" >More Results</a>' );
+					
+				};
+			}
+		);
+	});
+	
+	$( '.dynamic-form' ).on( 'click' , '.more-results' , function( event ){
+		event.preventDefault();
+		
+		var form = $( this ).parents( '.dynamic-form' );
+		
+		get_posts_per_page( form );
+		
+		$.post( 
+			form.attr("action"), 
+			form.serializeArray(), 
+			function( data ) {
+				form.find('.results-set').append( data );
+			}
+		);
+	});
+	
+	function get_posts_per_page( form ){
+		
+		var ppp = form.find( 'input[name="posts_per_page"]' ).val();
+		
+		var poffset = form.find( 'input[name="offset"]' ); 
+		
+		ppp = ( Number( poffset.val() ) + Number( ppp ) );
+		
+		poffset.val( ppp );
+		
+	};
+	
+});
+
+
 
