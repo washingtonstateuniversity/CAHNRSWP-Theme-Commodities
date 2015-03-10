@@ -158,7 +158,7 @@ $cahnrswp_archive = new CAHNRSWP_Archive_Type();
             </section>
             <ul class="category-archive <?php echo $cahnrswp_archive->post_type;?>">
             	<h3><?php echo post_type_archive_title( );?> By Category</h3> 
-            	<?php echo $cahnrswp_commodities->get_category_archive( false, 'post_type=' . $cahnrswp_archive->post_type ); ?>
+            	<?php echo $cahnrswp_commodities->get_category_archive( false, 'posts_per_page=30&post_type=' . $cahnrswp_archive->post_type ); ?>
             </ul>
         </article>
 	</div><!--/column-->

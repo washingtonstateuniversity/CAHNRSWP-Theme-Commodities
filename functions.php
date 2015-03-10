@@ -8,6 +8,8 @@ require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-query.php';
 
 require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-article.php';
 
+require_once CAHNRSCOMMODITIESDIR . '/classes/class-ccl-display.php';
+
 class Init_CAHNRSWP_Commodities {
 	
 	public function __construct(){

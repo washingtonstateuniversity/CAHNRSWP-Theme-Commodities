@@ -453,6 +453,10 @@ main .row.side-right .column.two {
 	background-image: url(images/AgWeatherNet.png);
 }
 
+#global-sidebar .tribe-events-list-widget {
+	margin-top: 3rem;
+}
+
 #global-sidebar #endownment-logo {
 	position: absolute;
 	bottom: -1px;
@@ -460,7 +464,7 @@ main .row.side-right .column.two {
 	background-color: #fff;
 	background-image: url(images/red-border.gif);
 	background-repeat: repeat-x;
-	background-position: center top;	
+	background-position: center top;
 }
 
 #global-sidebar #endownment-logo .logo{
@@ -1208,6 +1212,15 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		display: inline-block;
 		width: 42%;
 		margin: 1rem 4% 0;
+	}
+	
+	.cwp-submenu-section {
+		float: none !important;
+		width: auto !important;
+	}
+	
+	.cwp-submenu-articles {
+		margin-right: 0 !important;
 	}
 }
 
