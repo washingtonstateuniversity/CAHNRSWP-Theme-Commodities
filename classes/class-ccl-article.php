@@ -5,6 +5,30 @@
 
 class CCL_Article_Commodities {
 	
+	public function get_single_article( $url ){
+		
+		$site_url = get_site_url();
+		
+		if ( strpos( $site_url , $url ) !== false ) {
+			
+			// check id and do local query
+			
+			$postid = url_to_postid( $url );
+			
+			$article = 'local';
+			
+		} else {
+			
+			// do WP Rest query
+			
+			$article = 'remote';
+			
+		} // end if
+		
+		return $article;
+		
+	} // end method get single article
+	
 	public function get_articles_from_query( $query_args , $args = array() ){
 		
 		$articles = array();
@@ -43,6 +67,9 @@ class CCL_Article_Commodities {
 			case 'full':
 				$html .= $this->get_full_html( $article , $args );
 				break;
+			case 'list':
+				$html .= $this->get_list_html( $article , $args );
+				break;
 			case 'search-result':
 				$html .= $this->get_search_result_html( $article , $args );
 				break;
@@ -73,13 +100,21 @@ class CCL_Article_Commodities {
 		
 		$class = array();
 		
+		$html = '<a href="' . $link . '" ';
+		
 		if( ! empty( $args['show_lightbox'] ) ){
-			
-			$class[] = 'clb-action';
+		
+			$html .= 'class="clb-action" ';
 			
 		} // end if
 		
-		$html= '<a href="' . $link . '" class="' . implode( ' ', $class ) . '" >';
+		if( ! empty( $args['new_window'] ) ){
+			
+			$html .= 'target="_blank" ';
+			
+		} // end if
+		
+		$html .= ' >';
 		
 		return $html;
 		
@@ -124,6 +159,8 @@ class CCL_Article_Commodities {
 	
 	public function get_post_article( $post , $args = array() ){
 		
+		$args = apply_filters( 'ccl_get_post_article_args' , $args , $post );
+		
 		$article = array();
 		
 		$article['type'] = $post->post_type;
@@ -131,8 +168,16 @@ class CCL_Article_Commodities {
 		$article['title'] = apply_filters( 'the_title' , $post->post_title );
 			
 		$article['content'] = apply_filters( 'the_content' , $post->post_content );
+		
+		if ( isset( $post->post_excerpt ) && $post->post_excerpt ){
 			
-		$article['excerpt'] = apply_filters( 'the_excerpt' , $post->post_excerpt );
+			$article['excerpt'] = apply_filters( 'the_excerpt' , $post->post_excerpt );
+		
+		} else {
+			
+			$article['excerpt'] = wp_trim_words( strip_shortcodes( $article['excerpt'] ) , 35 );
+			
+		}// end if
 		
 		$img_size = ( ! empty ( $args['img_size'] ) )?  $args['img_size'] : 'thumbnail';
 		
@@ -482,6 +527,53 @@ class CCL_Article_Commodities {
 			} // end if
 			
 			$html .= '<li class="cwp-content promo-content '. $has_image . ' ' . $article['type'] . '" style="margin: 0; padding: 0; width: 75%; display: inline-block; vertical-align: top;">';
+				
+				if ( ! empty( $article['excerpt'] ) ){
+				
+					$html .= '<h4 class="cwp-title">' . $article['link_start'] . $article['title'] . $article['link_end'] . '</h4>';
+					
+				} // end if
+					
+				/*$html .= '<div class="cwp-meta">';
+					
+					$html .= $article['link_start'] . $article['link'] . $article['link_end'];
+					
+				$html .= '</div>';*/
+					
+				if ( ! empty( $article['excerpt'] ) ){
+				
+					$html .= '<div class="cwp-excerpt">';
+					
+						$html .= wp_trim_words( strip_shortcodes( $article['excerpt'] ) , 55 );
+					
+					$html .= '</div>';
+				
+				} // end if
+			
+			$html .= '</li>';
+    
+    	$html .= '</ul>';
+		
+		return $html;
+		
+	}
+	
+	public function get_list_html( $article, $args ){
+		
+		if( empty( $article['excerpt'] ) ){
+			
+			$article['excerpt'] = $article['content'];
+			
+		} // end if
+		
+		$ul_style = 'list-style-type: none;';
+		
+		$li_style = '';
+		
+		
+		$html = '<ul class="cwp-item list ' . $article['type'] . '" style="' . $ul_style . 'margin: 0; padding: 0.5rem 0;" >';
+			
+			$html .= '<li class="cwp-content list-content ' . $article['type'] . '" style="margin: 0; padding: 0; display: block;">';
 				
 				if ( ! empty( $article['excerpt'] ) ){
 				
