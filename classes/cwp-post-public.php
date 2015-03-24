@@ -1,6 +1,6 @@
 <?php 
 /*
- * CWP_Post_Public, version: 0.0.9
+ * CWP_Post_Public, version: 0.0.10
  *
  * @desc: Handles querying and displaying posts and wp_rest calls
 */
@@ -108,7 +108,10 @@ class CWP_Post_Public_Commodities {
 		if ( ! empty( $args['orderby'] ) ) $query['orderby'] = $args['orderby'];
 		
 		// Posts Per Page Query
-		if ( ! empty( $args['post_per_page'] ) ) $query['post_per_page'] = $args['post_per_page'];
+		if ( ! empty( $args['posts_per_page'] ) ) $query['posts_per_page'] = $args['posts_per_page'];
+		
+		// Posts Per Page Query
+		if ( ! empty( $args['offset'] ) ) $query['offset'] = $args['offset'];
 		
 		/**
 		 * Tax Query: Converts comma seperated tax lists to an array of ids
@@ -168,10 +171,27 @@ class CWP_Post_Public_Commodities {
 	} // end cwp_get_rest_query
 	
 	
+	// Version 0.0.1
+	public function cwp_get_item_from_url( $url , $args ){
+		
+		$item = array();
+		
+		if ( strpos( $url, get_site_url() ) !== false ){
+			
+			
+		} else {
+		}
+		
+		return $item;
+		
+	}
+	
 	
 	/****************************************************
 	 * Get Items
 	****************************************************/
+	
+	
 	
 	
 	// Version 0.0.3
@@ -239,7 +259,7 @@ class CWP_Post_Public_Commodities {
 		
 		if ( in_array( 'excerpt' , $fields ) ){
 				
-			$item['excerpt'] = get_the_excerpt();
+			$item['excerpt'] = wp_strip_all_tags( get_the_excerpt() );
 		
 		} // end if
 		

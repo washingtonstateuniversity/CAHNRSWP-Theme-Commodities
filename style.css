@@ -4,7 +4,7 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     0.0.8
+ * Version:     0.0.9
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
@@ -957,6 +957,36 @@ ul.azindex a {
 	font-weight: normal;
 }
 
+.apple-section-icon,
+.pear-section-icon,
+.cherry-section-icon,
+.peach-section-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	background-position: bottom center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 0.2rem;
+	opacity: 0.3;
+	cursor: default;
+}
+
+.apple-section-icon { background-image: url( images/apple-icon-grey.png ); margin-left: 1rem; }
+.pear-section-icon { background-image: url( images/pear-icon-grey.png ); }
+.cherry-section-icon { background-image: url( images/cherry-icon-grey.png ); }
+.peach-section-icon { background-image: url( images/stone-fruit-icon-grey.png );}
+
+.apple-section-icon.active,
+.pear-section-icon.active,
+.cherry-section-icon.active,
+.peach-section-icon.active { cursor: pointer; opacity: 1; }
+
+.apple-section-icon.active { background-image: url( images/apple-icon.png ); margin-left: 1rem; }
+.pear-section-icon.active { background-image: url( images/pear-icon.png ); }
+.cherry-section-icon.active { background-image: url( images/cherry-icon.png ); }
+.peach-section-icon.active { background-image: url( images/stone-fruit-icon.png );}
 
 
 

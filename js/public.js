@@ -87,6 +87,13 @@ jQuery( document ).ready( function(){
 			form_data, 
 			function( data ) {
 				form.before( data );
+				
+				var offset_input = form.find( 'input[name="offset"]');
+				
+				var new_count = parseInt( offset_input.val() ) + parseInt( form.data( 'count') );
+				
+				offset_input.val( new_count );
+				
 			}
 		);
 		
@@ -95,7 +102,7 @@ jQuery( document ).ready( function(){
 }); // end if
 
 
-$('body').on( 'click' , '.browse-section a.submit' , function( event ){
+jQuery('body').on( 'click' , '.browse-section a.submit' , function( event ){
 		
 		event.preventDefault();
 		

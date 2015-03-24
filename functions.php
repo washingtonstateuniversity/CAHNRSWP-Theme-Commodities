@@ -217,6 +217,8 @@ class Init_CAHNRSWP_Commodities {
 		$query_args = array(
 			'post_type' => $post_type,
 			'posts_per_page' => 8,
+			'orderby' => 'title',
+			'order' => 'ASC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'category',

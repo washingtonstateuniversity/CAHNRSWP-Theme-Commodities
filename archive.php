@@ -147,6 +147,7 @@ $cwp_post_public = new CWP_Post_Public_Commodities();
 					
 					$instance = array(
 						'display' => 'promo-small',
+						'new_window' => 1,
 					);
 					
 					while ( have_posts() ){
@@ -164,7 +165,11 @@ $cwp_post_public = new CWP_Post_Public_Commodities();
 						
 					} // end while
 					
-					$cwp_post_public->cwp_get_show_more( $wp_query->query_vars , true );
+					$query_args = $wp_query->query_vars;
+					
+					$query_args['display'] = 'promo-small';
+					
+					$cwp_post_public->cwp_get_show_more( $query_args , true );
 					
 				} // end if
                 ?>
