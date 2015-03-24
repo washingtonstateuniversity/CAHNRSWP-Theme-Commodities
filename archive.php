@@ -97,6 +97,9 @@ class CAHNRSWP_Archive_Type {
 } 
 
 $cahnrswp_archive = new CAHNRSWP_Archive_Type();
+
+$cwp_post_public = new CWP_Post_Public_Commodities();
+
 ;?>
 <?php get_header(); ?>
 
@@ -137,6 +140,9 @@ $cahnrswp_archive = new CAHNRSWP_Archive_Type();
                 <h3>Selected <?php echo post_type_archive_title( );?></h3>
                 <?php endif;?>
                 <?php
+				
+				global $wp_query;
+				
 				if( have_posts() ){
 					
 					$instance = array(
@@ -147,11 +153,18 @@ $cahnrswp_archive = new CAHNRSWP_Archive_Type();
 						
 						the_post();
 						
-						$article = $cahnrswp_archive->ccl_article->get_post_article( $post );
+						$item = $cwp_post_public->cwp_get_item_wp_loop( $post , $instance );
+						
+						$cwp_post_public->cwp_get_article_from_item( $item , $instance , true );
+						
+						
+						//$article = $cahnrswp_archive->ccl_article->get_post_article( $post );
 				
-						echo $cahnrswp_archive->ccl_article->get_article_display( $article , $instance );
+						//echo $cahnrswp_archive->ccl_article->get_article_display( $article , $instance );
 						
 					} // end while
+					
+					$cwp_post_public->cwp_get_show_more( $wp_query->query_vars , true );
 					
 				} // end if
                 ?>

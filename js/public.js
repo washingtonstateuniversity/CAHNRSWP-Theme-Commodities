@@ -18,9 +18,13 @@ jQuery( document ).ready( function(){
 			
 			event.preventDefault();
 			
-			var index = jQuery( this ).parent('li').index();
+			var par = jQuery( this ).parent();
+			
+			var index = par.index();
 			
 			self.articles.eq( index ).show().siblings().hide();
+			
+			par.addClass( 'active-article' ).siblings('li').removeClass( 'active-article' );
 			
 		}); // end on click
 		
@@ -66,7 +70,48 @@ jQuery( document ).ready( function(){
 	
 	var cwpc_tabs = new cwpc_tabs_init(); 
 	
+	jQuery( 'body' ).on( 'submit' , '.dynamic-show-more', function( event ){
+		
+		event.preventDefault();
+		
+		var form = jQuery( this );
+		
+		var form_data = form.serializeArray();
+		
+		form_data.push( { name : 'cwp_ajax' , value : true } );
+		
+		console.log( form_data );
+		
+		var g = jQuery.post( 
+			form.attr("action"), 
+			form_data, 
+			function( data ) {
+				form.before( data );
+			}
+		);
+		
+	});
+	
 }); // end if
+
+
+$('body').on( 'click' , '.browse-section a.submit' , function( event ){
+		
+		event.preventDefault();
+		
+		var form = jQuery( this ).parents("form").first();
+	
+		var g = jQuery.post( 
+			form.attr("action"), 
+			form.serializeArray(), 
+			function( data ) {
+				form.find('.form-results').html( data );
+			}
+		);
+		
+	});
+
+
 
 /*
  * Accordion List
