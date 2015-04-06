@@ -4,7 +4,7 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     0.0.12
+ * Version:     0.0.13
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
@@ -353,6 +353,26 @@ body.home main > section .column.one:before,
 #cahnrs-treefruit-footer .fruit-nav a .icon img{
 	display: block;
 	max-width: 100%;
+}
+
+#cahnrs-treefruit-footer .fruit-nav a .text{
+	display: none;
+}
+
+#cahnrs-treefruit-footer .fruit-nav a:hover .text{
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 2.5rem;
+	width: 100%;
+	background-color: rgba( 255 , 255, 255 , 0.7 );
+	text-align: center;
+	font-size: 0.9rem;
+	padding: 0.25rem 0;
+}
+
+#cahnrs-treefruit-footer .fruit-nav a:hover .icon {
+	width: 65%;
 }
 
 #cahnrs-treefruit-footer .title {
