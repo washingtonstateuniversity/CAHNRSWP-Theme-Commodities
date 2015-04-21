@@ -4,7 +4,7 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     1.0.0
+ * Version:     1.0.1
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
@@ -690,6 +690,12 @@ form.search-bar {
 /*
  * Category Page
 */
+
+.category-nav {
+	padding:  0 0 1rem;
+	margin: 0;
+}
+
 .category-nav ul {
 	padding: 1rem 0 0;
 	margin: 0;
@@ -1008,7 +1014,9 @@ ul.azindex a {
 .cherry-section-icon.active { background-image: url( images/cherry-icon.png ); }
 .peach-section-icon.active { background-image: url( images/stone-fruit-icon.png );}
 
-
+.fruit-icon-wrapper {
+	display: inline-block;
+}
 
 
 
@@ -1043,6 +1051,25 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYA
 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZDNUJEODg4NzhFMTFFNDk0RTk4QjE0MzE0NzgxOEMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZDNUJEODk4NzhFMTFFNDk0RTk4QjE0MzE0NzgxOEMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkM1QkQ4Njg3OEUxMUU0OTRFOThCMTQzMTQ3ODE4QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkM1QkQ4Nzg3OEUxMUU0OTRFOThCMTQzMTQ3ODE4QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pg2+fEoAAAAOSURBVHjaYmBgZAUIMAAACwAHbDBXaQAAAABJRU5ErkJggg==)
 }
 
+@media only screen and ( max-width: 1200px ) {
+	
+	#search-nav a {
+	  display: block;
+	  padding: 0.5rem 1.5rem;
+	  background-image: none;
+	  background-color: #333;
+	  background-repeat: no-repeat;
+	  background-position: -400px center;
+	  border-right: 1px solid #666;
+	  border-bottom: 1px solid #666;
+	  border-top: 1px solid #000;
+	}
+	
+	#search-nav a.activesearch {
+	  background-color: #777;
+	}
+	
+}
 
 @media only screen and ( max-width: 1000px ) {
 	#site-home-section {
@@ -1224,6 +1251,12 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#cahnrs-treefruit-footer .fruit-nav {
 		margin-right: 0;
 	}
+	
+	.cwp-item.gallery,
+	.cwp-slider .cwp-item {
+		width: 50% !important;
+	}
+	
 }
 
 /*@media only screen and ( min-width: 792px ) and ( max-width: 900px ) {
@@ -1313,6 +1346,24 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	.cwp-submenu-articles {
 		margin-right: 0 !important;
 	}
+	
+	ul.azindex {
+		padding: 0 0 0 0;
+	  width: 97%;
+	  list-style-type: none;
+	}
+	ul.azindex h4 {
+		padding: 0 0 0 0;
+	}
+	
+	.cwp-promo .cwp-article-image {
+		width: 75px !important;
+	}
+	
+	.cwp-promo .cwp-article-content {
+		font-size: 0.8rem;
+		line-height: 1.1rem;
+	}
 }
 
 @media only screen and ( max-width: 600px ) {
@@ -1326,8 +1377,15 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	}
 	
 	.commodities-tabs li a {
-	  padding: 0 2rem;
-	  font-size: 0.8rem;
+	  padding: 0 1rem;
+	  font-size: 0.7rem;
+	}
+	
+	#post-type-archive .category-archive,
+	#post-type-archive .recent-archive {
+	  width: auto;
+	  display: block;
+	  margin-right: 0;
 	}
 	
 }
@@ -1362,6 +1420,35 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 		background: transparent;
 	}
 	
+	.fruit-icon-wrapper {
+	  	padding-top: 0.75rem;
+	}
+	
+	.fruit-icon-wrapper a.section-icon {
+	  	width: 2rem !important;
+  		height: 2rem !important;
+		margin-left: 0 !important;
+	}
+	
+	.cwp-promo .cwp-article-image {
+		display: block !important;
+		width: auto !important;
+		padding-bottom: 0.5rem;
+	}
+	
+	.cwp-promo .cwp-article-content {
+		display: block !important;
+		width: auto !important;
+	}
+	
+	.search-result .search-image {
+		display: none;
+	}
+	
+	.search-result .search-text {
+	  margin-left: 0;
+	}
+	
 }
 
 @media only screen and ( max-width: 400px ) {
@@ -1374,6 +1461,10 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	#cahnrs-global-header #site-search input#site-search-submit {
 		width: 30px;
 		padding: 0;
+	}
+	.cwp-item.gallery,
+	.cwp-slider .cwp-item {
+		width: 100% !important;
 	}
 	
 }
