@@ -26,7 +26,7 @@ class Init_CAHNRSWP_Commodities {
 		
 		add_filter( 'excerpt_length', array( $this , 'cahnrswp_excerpt_length' ), 999 );
 		
-		add_filter( 'post_thumbnail_html' , array( $this , 'cwp_post_thumbnail_html' ) , 20 , 5 );
+		//add_filter( 'post_thumbnail_html' , array( $this , 'cwp_post_thumbnail_html' ) , 20 , 5 );
 		
 		add_filter( 'the_title' , array( $this, 'cwp_filter_title' ) );
 		
