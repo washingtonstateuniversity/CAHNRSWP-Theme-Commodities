@@ -1432,8 +1432,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 @media only screen and ( max-width: 791px ) {
 	.fluid .row.side-right .column.two,
 	main .row.side-right .column.two {
-		top: 0 !important;
-		margin-top: 110px;
+		top: 110px;
 	}
 	
 	#site-home-section {
