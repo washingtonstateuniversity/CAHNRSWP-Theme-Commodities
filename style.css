@@ -4,11 +4,35 @@
  * Author:      CAHNRS Communications, Danial Bleile
  * Author URI:  http://cahnrs.wsu.edu/communications/
  * Description: 
- * Version:     1.0.3
+ * Version:     1.0.5
  * License:     Copyright Washington State University
  * License      URI: http://copyright.wsu.edu
  * Template:    WSUWP-spine-parent-theme
  */
+
+#newsletter {
+	margin: 0 2rem;
+}
+
+#newsletter h1 {
+	padding-bottom: 2rem;
+}
+
+#newsletter h2.subtitle {
+	font-size: 1.2rem;
+	background-color: #4a4f53;
+	color: #ffffff;
+	margin: 0 0 1rem;
+  	padding: 5px 10px;
+	font-weight: normal;
+}
+
+#newsletter h3 {
+	font-size: 1.1rem;
+	color: #a90332;
+	margin: 0;
+	padding-bottom: 0.5rem;
+}
 
 body {
 	word-wrap: break-word;
@@ -126,10 +150,11 @@ body.home main > section .column.one:before,
 	padding: 0 2rem;
 }
 #cahnrs-global-header .site-title span {
-	display: block;
+	display: none;
+	/*display: block;
 	font-size: 1.1rem;
 	letter-spacing: 1px;
-	padding-top: 0.25rem;
+	padding-top: 0.25rem;*/
 }
 
 #cahnrs-global-header #site-search {
@@ -416,6 +441,7 @@ main .row.side-right .column.two {
 	top: 0;
 	z-index: 150;
 	float: none;
+	padding-top: 0;
 }
 
 #global-sidebar {
@@ -1193,12 +1219,16 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	}
 	
 	#cahnrs-global-header #site-nav-horizontal {
+		display: none;
+	}
+	
+	/*#cahnrs-global-header #site-nav-horizontal {
 		padding: 0.1rem 2rem;
 	}
 	
 	#cahnrs-global-header #site-nav-horizontal a {
 		font-size: 0.8rem;
-	}
+	}*/
 	
 	/*#cahnrs-treefruit-footer .fruit-nav {
 		right: 0;
@@ -1225,14 +1255,102 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	
 	.fluid .row.side-right .column.two,
 	main .row.side-right .column.two {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		margin: 0;
+		padding: 0;
+		top: 60px;
+	}
+	
+	#global-sidebar {
+		position: static;
+		width: auto;
+		height: 50px;
+	}
+	
+	/*#endownment-logo {
+		display: none;
+	}*/
+	
+	#global-sidebar #endownment-logo {
+		width: 170px;
+		height: 50px;
+		right: 0;
+		top: 0;
+		background-image: none;
+	}
+	
+	#global-sidebar #endownment-logo .logo {
+	  height: 50px;
+	  background-image: url(images/endownment-logo-small.jpg);
+	  background-repeat: no-repeat;
+	  background-position: left center;
+	  background-size: contain;
+	  margin: 0 5px;
+	  background-color: #fff;
+	}
+	
+	
+	#global-sidebar > aside {
+	  margin: 0 0 0 220px;
+	  padding-top: 0;
+	}
+	
+	#global-sidebar > aside .cwp-content{
+	  display: none;
+	}
+	
+	#global-sidebar .tribe-events-list-widget header,
+	#global-sidebar .cwp-accordion h4 a {
+	  color: #fff;
+	  border-bottom: none;
+	  /*padding: 0 1rem;
+	  margin: 0 1rem 0 0;
+	  font-size: 0.9rem;
+	  height: 35px;
+	  line-height: 35px;*/
+	  border-right: 1px solid #666;
+	  background-position: center center !important;
+	}
+	
+	#global-sidebar h4 {
+		padding: 0;
+	  font-size: 0;
+	}
+	
+	#global-sidebar .cwp-accordion h4 a {
+	  padding: 0 !important;
+	  height: 50px;
+	  width: 60px;
+	  font-size: 0;
+	}
+	
+	#global-sidebar .cwp {
+	  font-size: 0;
+	}
+	
+	#global-sidebar .tribe-events-list-widget ol,
+	#global-sidebar .tribe-events-list-widget p {
 		display: none;
 	}
+	
+	#global-sidebar > aside aside{
+	  display: inline-block;
+	  vertical-align: top;
+	}
+	
+	#global-sidebar .tribe-events-list-widget {
+	  margin-top: 0;
+	  display: none;
+	}
+	
 	
 	.fluid .row.side-right .column.one,
 	main .row.side-right .column.one {
 		width: auto;
 		margin: 0 0 0 0;
-		padding: 2rem 0 4rem;
+		padding: 80px 0 4rem;
 		float: none;
 	}
 	
@@ -1242,6 +1360,16 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	
 	#cahnrs-treefruit-footer .fruit-nav {
 		margin-right: 0;
+	}
+	
+	#site-home-section .site-home-column {
+	  padding-top: 160px;
+	}
+	
+	#global-sidebar .cwp-accordion.on-hover .cwp-content {
+
+	  left: 0;
+	  top: 100%;
 	}
 
 }
@@ -1259,6 +1387,11 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	.cwp-item.gallery,
 	.cwp-slider .cwp-item {
 		width: 50% !important;
+	}
+	
+	.site-home-widgets .cwp-item.gallery,
+	.site-home-widgets .cwp-slider .cwp-item {
+		width: auto !important;
 	}
 	
 }
@@ -1299,7 +1432,8 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 @media only screen and ( max-width: 791px ) {
 	.fluid .row.side-right .column.two,
 	main .row.side-right .column.two {
-		top: 110px;
+		top: 0 !important;
+		margin-top: 110px;
 	}
 	
 	#site-home-section {
@@ -1307,12 +1441,16 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	}
 	
 	#site-home-section .site-home-column {
-		padding-top: 160px;
+		padding-top: 230px;
 	}
 	
 	#site-home-section .cwp-image {
 		height: auto;
 		overflow: hidden;
+	}
+	
+	#global-sidebar > aside {
+	  margin-left: 2rem;
 	}
 	
 }
@@ -1529,3 +1667,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIA
 	background-repeat: no-repeat;
 	background-position: 98% center;
 }
+/*
+ * Newsletter
+*/
+
