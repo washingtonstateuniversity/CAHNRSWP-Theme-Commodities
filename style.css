@@ -10,6 +10,23 @@
  * Template:    WSUWP-spine-parent-theme
  */
 
+
+/*
+* Gallery
+* -------------------------------
+*/
+
+.gallery .gallery-item {
+	width: 160px;
+	padding: 5px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+}
+
+.gallery .gallery-item figcaption {
+	font-size: 0.8rem;
+}
+
 #newsletter {
 	margin: 0 2rem;
 }

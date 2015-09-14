@@ -9,6 +9,8 @@
 <section class="row side-right">
 
 	<div class="column one">
+    
+    	<img src="<?php echo get_stylesheet_directory_uri();?>/images/fruit-matters-banner.jpg" style="width: 100%;display:block;margin-bottom: 2rem;" />
 		
         <div id="newsletter">
 		<?php while ( have_posts() ) : the_post(); ?>
