@@ -122,7 +122,7 @@ $cwp_post_public = new CWP_Post_Public_Commodities();
                         <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
                         <input class="search-text" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
                         <input type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
-                        <input type="hidden" name="post_type" value="video" />
+                        <input type="hidden" name="post_type" value="<?php echo $cahnrswp_archive->post_type;?>" />
                     </div>
                 </form>
             </header>
@@ -169,6 +169,8 @@ $cwp_post_public = new CWP_Post_Public_Commodities();
 					
 					$query_args['display'] = 'promo-small';
 					
+					if ( 'news' == $cahnrswp_archive->post_type ) $query_args['new_window'] = 1;
+ 					
 					$cwp_post_public->cwp_get_show_more( $query_args , true );
 					
 				} // end if

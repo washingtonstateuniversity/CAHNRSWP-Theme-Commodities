@@ -18,4 +18,5 @@
         </h1>
 	</header>
 	<?php the_content(); ?>
+    <a href="#">Top of Page</a>
 </article>
